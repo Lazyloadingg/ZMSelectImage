@@ -6,14 +6,14 @@
 //  Copyright © 2017年 圣光大人. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "VC_Main.h"
 #import <Photos/Photos.h>
 #import "ZMHead.h"
-@interface ViewController ()
+@interface VC_Main ()
 
 @end
 
-@implementation ViewController
+@implementation VC_Main
 
 - (void)viewDidLoad {
     [super viewDidLoad];
