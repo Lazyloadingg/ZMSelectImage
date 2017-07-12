@@ -26,6 +26,7 @@
 		0A822B1B1F162E7500B0DB26 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0A822B1E1F162E7500B0DB26 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0A822B201F162E7500B0DB26 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0A822B261F162ED100B0DB26 /* ZMHead.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZMHead.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +63,7 @@
 				0A822B131F162E7500B0DB26 /* AppDelegate.m */,
 				0A822B151F162E7500B0DB26 /* ViewController.h */,
 				0A822B161F162E7500B0DB26 /* ViewController.m */,
+				0A822B261F162ED100B0DB26 /* ZMHead.h */,
 				0A822B181F162E7500B0DB26 /* Main.storyboard */,
 				0A822B1B1F162E7500B0DB26 /* Assets.xcassets */,
 				0A822B1D1F162E7500B0DB26 /* LaunchScreen.storyboard */,
@@ -311,6 +313,7 @@
 				0A822B251F162E7500B0DB26 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
