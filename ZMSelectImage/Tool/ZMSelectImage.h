@@ -1,13 +1,28 @@
 //
-//  ZMHead.h
+//  ZMSelectImage.h
 //  ZMSelectImage
 //
-//  Created by Mac2 on 2017/7/12.
+//  Created by Mac2 on 2017/7/13.
 //  Copyright © 2017年 圣光大人. All rights reserved.
 //
 
-#ifndef ZMHead_h
-#define ZMHead_h
+#ifndef ZMSelectImage_h
+#define ZMSelectImage_h
+
+#import <Photos/Photos.h>
+
+
+
+
+
+
+#define Self_Width  self.bounds.size.width
+#define Self_Height  self.bounds.size.width
+#define MainScreen_Width [UIScreen mainScreen].bounds.size.width
+#define MainScreen_Height [UIScreen mainScreen].bounds.size.height
+
+#define WEAKSELF(weakself)      __weak __typeof(&*self)    weakself  = self;
+
 #ifdef DEBUG
 /**  //获取类名(文件名)；
  NSString *className = NSStringFromClass([self class]);
@@ -41,4 +56,6 @@
 #define ZMLog(FORMAT, ...) nil
 #endif
 
-#endif /* ZMHead_h */
+
+
+#endif /* ZMSelectImage_h */
