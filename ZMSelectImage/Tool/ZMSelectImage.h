@@ -10,7 +10,11 @@
 #define ZMSelectImage_h
 
 #import <Photos/Photos.h>
+#import "ZMBaseButton.h"
 
+
+#import "VC_ShowImage.h"
+#import "M_CollectionModel.h"
 
 
 
@@ -22,7 +26,7 @@
 #define MainScreen_Height [UIScreen mainScreen].bounds.size.height
 
 #define WEAKSELF(weakself)      __weak __typeof(&*self)    weakself  = self;
-
+#define image(a) [UIImage imageNamed:a]
 #ifdef DEBUG
 /**  //获取类名(文件名)；
  NSString *className = NSStringFromClass([self class]);

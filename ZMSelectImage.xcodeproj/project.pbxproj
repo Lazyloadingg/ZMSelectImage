@@ -21,6 +21,8 @@
 		0A822B1A1F162E7500B0DB26 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A822B181F162E7500B0DB26 /* Main.storyboard */; };
 		0A822B1C1F162E7500B0DB26 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A822B1B1F162E7500B0DB26 /* Assets.xcassets */; };
 		0A822B1F1F162E7500B0DB26 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A822B1D1F162E7500B0DB26 /* LaunchScreen.storyboard */; };
+		961994331F312AE600F5027F /* M_CollectionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 961994321F312AE600F5027F /* M_CollectionModel.m */; };
+		961994371F31336E00F5027F /* ZMBaseButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 961994361F31336E00F5027F /* ZMBaseButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +53,10 @@
 		0A822B1B1F162E7500B0DB26 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0A822B1E1F162E7500B0DB26 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0A822B201F162E7500B0DB26 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		961994311F312AE600F5027F /* M_CollectionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M_CollectionModel.h; sourceTree = "<group>"; };
+		961994321F312AE600F5027F /* M_CollectionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M_CollectionModel.m; sourceTree = "<group>"; };
+		961994351F31336E00F5027F /* ZMBaseButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMBaseButton.h; sourceTree = "<group>"; };
+		961994361F31336E00F5027F /* ZMBaseButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMBaseButton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +100,8 @@
 				0A7DD56A1F306A1600F1771F /* UIView+FrameExtension.m */,
 				0A7DD56C1F30782100F1771F /* ZMRequestPhoto.h */,
 				0A7DD56D1F30782100F1771F /* ZMRequestPhoto.m */,
+				961994311F312AE600F5027F /* M_CollectionModel.h */,
+				961994321F312AE600F5027F /* M_CollectionModel.m */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -130,6 +138,7 @@
 		0A822B0E1F162E7500B0DB26 /* ZMSelectImage */ = {
 			isa = PBXGroup;
 			children = (
+				961994341F31335A00F5027F /* public */,
 				0A7DD54E1F3068A900F1771F /* Controller */,
 				0A7DD5571F3068A900F1771F /* Model */,
 				0A7DD5591F3068A900F1771F /* Tool */,
@@ -151,6 +160,15 @@
 				0A822B101F162E7500B0DB26 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		961994341F31335A00F5027F /* public */ = {
+			isa = PBXGroup;
+			children = (
+				961994351F31336E00F5027F /* ZMBaseButton.h */,
+				961994361F31336E00F5027F /* ZMBaseButton.m */,
+			);
+			path = public;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -228,10 +246,12 @@
 				0A7DD5671F3068A900F1771F /* V_ShowImageListCell.m in Sources */,
 				0A7DD5651F3068A900F1771F /* V_ShowImageCell.m in Sources */,
 				0A7DD5611F3068A900F1771F /* VC_Main.m in Sources */,
+				961994371F31336E00F5027F /* ZMBaseButton.m in Sources */,
 				0A7DD5621F3068A900F1771F /* VC_ShowImage.m in Sources */,
 				0A7DD56E1F30782100F1771F /* ZMRequestPhoto.m in Sources */,
 				0A7DD5631F3068A900F1771F /* VC_ShowImageList.m in Sources */,
 				0A7DD5641F3068A900F1771F /* VC_ShowImageNavi.m in Sources */,
+				961994331F312AE600F5027F /* M_CollectionModel.m in Sources */,
 				0A822B141F162E7500B0DB26 /* AppDelegate.m in Sources */,
 				0A7DD5661F3068A900F1771F /* V_ShowImageFooter.m in Sources */,
 				0A7DD56B1F306A1600F1771F /* UIView+FrameExtension.m in Sources */,

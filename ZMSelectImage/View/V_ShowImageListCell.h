@@ -7,11 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "ZMSelectImage.h"
 @interface V_ShowImageListCell : UITableViewCell
-@property(nonatomic,strong)UIImageView * img_title;
-@property(nonatomic,strong)UILabel * lab_title;
-@property(nonatomic,strong)UILabel * lab_detailTitle;
+
+@property(nonatomic,strong)M_CollectionModel * model;
 +(instancetype)initWithTableView:(UITableView *)tableView ID:(NSString *)ID;
 
 @end

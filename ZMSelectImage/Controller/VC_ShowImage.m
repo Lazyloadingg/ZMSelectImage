@@ -25,7 +25,7 @@ static NSString * const ZMSelectShowCollectionFotterID = @"ZMSelectShowCollectio
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     
-    [self.v_collection scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:self.arr_image.count-1 inSection:0] atScrollPosition:UICollectionViewScrollPositionTop animated:NO];
+//    [self.v_collection scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:self.arr_image.count-1 inSection:0] atScrollPosition:UICollectionViewScrollPositionTop animated:NO];
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -48,7 +48,6 @@ static NSString * const ZMSelectShowCollectionFotterID = @"ZMSelectShowCollectio
         item  = [[V_ShowImageCell alloc]init];
     }
     item.img_show = self.arr_image[indexPath.row];
-    item.contentView.backgroundColor = [UIColor yellowColor];
     return item;
 }
 -(UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{

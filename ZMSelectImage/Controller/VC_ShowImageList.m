@@ -37,15 +37,16 @@ static NSString * const VC_ShowImageListCellID = @"VC_ShowImageListCellID";
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     V_ShowImageListCell * cell = [V_ShowImageListCell initWithTableView:tableView ID:VC_ShowImageListCellID];
-
-    PHAssetCollection * Imagecollection = self.arr_imageLibrary[indexPath.row];
-    cell.img_title.image = [ZMRequestPhoto RequestImageWithPHAssetCollection:Imagecollection original:NO].lastObject;
-    cell.lab_title.text = Imagecollection.localizedTitle;
+    M_CollectionModel * model = self.arr_imageLibrary[indexPath.row];
+    cell.model = model;
     
     return cell;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
+    VC_ShowImage * vc = [[VC_ShowImage alloc]init];
+    M_CollectionModel * model = self.arr_imageLibrary[indexPath.row];
+    vc.arr_image =model.arr_image;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 #pragma mark >_<! 👉🏻 🐷Custom Delegate🐷
 #pragma mark >_<! 👉🏻 🐷Event  Response🐷

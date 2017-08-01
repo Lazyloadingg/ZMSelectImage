@@ -9,6 +9,9 @@
 #import "V_ShowImageListCell.h"
 #import "UIView+FrameExtension.h"
 @interface V_ShowImageListCell()
+@property(nonatomic,strong)UIImageView * img_title;
+@property(nonatomic,strong)UILabel * lab_title;
+@property(nonatomic,strong)UILabel * lab_detailTitle;
 @end
 @implementation V_ShowImageListCell
 
@@ -35,12 +38,19 @@
 }
 #pragma mark >_<! --> 加载默认设置
 -(void)loadDefaultsSetting{
-    
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
 }
 #pragma mark >_<! --> 初始化子视图
+-(void)setModel:(M_CollectionModel *)model{
+    _model = model;
+    self.img_title.image = _model.arr_image.firstObject;
+    self.lab_title.text = _model.str_collectionTitle;
+}
 -(void)initSubViews{
     
     UIImageView * img_title = [[UIImageView alloc]init];
+    img_title.contentMode = UIViewContentModeScaleAspectFill;
+    img_title.clipsToBounds = YES;
     [self.contentView addSubview:img_title];
     self.img_title = img_title;
     
