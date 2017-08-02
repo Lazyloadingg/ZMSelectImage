@@ -39,11 +39,13 @@
 #pragma mark >_<! --> 加载默认设置
 -(void)loadDefaultsSetting{
     self.selectionStyle = UITableViewCellSelectionStyleNone;
+//    self.contentView.backgroundColor = [[UIColor yellowColor]colorWithAlphaComponent:0.5];
 }
 #pragma mark >_<! --> 初始化子视图
 -(void)setModel:(M_CollectionModel *)model{
     _model = model;
-    self.img_title.image = _model.arr_image.firstObject;
+    M_CollectionCellModel * cell_model =_model.arr_image.firstObject;
+    self.img_title.image = cell_model.img_preview;
     self.lab_title.text = _model.str_collectionTitle;
 }
 -(void)initSubViews{
@@ -68,7 +70,7 @@
     
     self.img_title.frame = CGRectMake(0, 0, self.contentView.height, self.contentView.height);
     
-    self.lab_title.frame = CGRectMake(self.img_title.width+5, 0, 100, self.contentView.height);
+    self.lab_title.frame = CGRectMake(self.img_title.width+5, 0, 200, self.contentView.height);
     
 }
 @end

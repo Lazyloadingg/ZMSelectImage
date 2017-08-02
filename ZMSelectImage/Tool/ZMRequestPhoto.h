@@ -9,7 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "ZMSelectImage.h"
 @interface ZMRequestPhoto : NSObject
-+(NSArray*)RequestImageWithPHAssetCollection:(PHAssetCollection *)collection original:(BOOL)original;
-+(UIImage *)RequestImageithPHAsset:(PHAsset *)asset original:(BOOL)original;
-+(NSArray*)RequestImageWithPHAssetCollection:(PHAssetCollection *)collection imageSize:(CGSize)size;
++(void)RequestImageWithPHAssetCollection:(PHAssetCollection *)collection original:(BOOL)original block:(void(^)(NSArray *))block;
++(void)RequestImageithPHAsset:(PHAsset *)asset original:(BOOL)original block:(void(^)(UIImage*))block;
++(void)RequestImageWithPHAssetCollection:(PHAssetCollection *)collection imageSize:(CGSize)size complete:(void(^)(NSArray *))complete;
++(void)RequestImageithPHAsset:(PHAsset *)asset imageSize:(CGSize)size block:(void(^)(UIImage*))block;
 @end

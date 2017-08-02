@@ -7,7 +7,7 @@
 //
 
 #import "V_ShowImageCell.h"
-#import "ZMSelectImage.h"
+
 #define btnW 30
 @interface V_ShowImageCell()
 @property(nonatomic,strong)UIImageView * v_image;
@@ -23,9 +23,9 @@
     return self;
     
 }
--(void)setImg_show:(UIImage *)img_show{
-    _img_show = img_show;
-    self.v_image.image = _img_show;
+-(void)setModel:(M_CollectionCellModel *)model{
+    _model  = model;
+    self.v_image.image = model.img_preview;
 }
 #pragma mark >_<! --> 加载默认设置
 -(void)loadDefaultsSetting{
@@ -49,6 +49,9 @@
 -(void)btnAction:(UIButton * )button{
     button.selected = !button.selected;
     ZMLog(@"做点什么");
+}
+-(void)setSelected:(BOOL)selected{
+    [super setSelected:selected];
 }
 -(void)layoutSubviews{
     [super layoutSubviews];

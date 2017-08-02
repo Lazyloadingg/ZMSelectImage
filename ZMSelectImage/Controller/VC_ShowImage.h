@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface VC_ShowImage : UIViewController
+#import "ZMSelectImage.h"
+@interface VC_ShowImage : ZMBaseViewController
 @property(nonatomic,strong)NSArray * arr_image;
 @end

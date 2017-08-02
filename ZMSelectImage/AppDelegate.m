@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 #import "VC_ShowImage.h"
 #import "VC_Main.h"
+#import "ZMSelectImage.h"
+#import "VC_ShowImageList.h"
 @interface AppDelegate ()
 
 @end
@@ -19,7 +21,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
-    self.window.rootViewController = [[UINavigationController alloc]initWithRootViewController: [[VC_Main alloc]init]];
+    self.window.rootViewController = [[ZMNavigationController alloc]initWithRootViewController: [[VC_Main alloc]init]];
+//    self.window.rootViewController = [[VC_Main alloc]init];
     [self.window makeKeyAndVisible];
     
     return YES;

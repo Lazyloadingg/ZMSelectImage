@@ -1,14 +1,13 @@
 //
-//  V_ShowImageCell.h
+//  V_ShowImagePreviewCell.h
 //  ZMSelectImage
 //
-//  Created by Mac2 on 2017/7/13.
+//  Created by Mac2 on 2017/8/2.
 //  Copyright © 2017年 圣光大人. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
-#import "ZMSelectImage.h"
-@interface V_ShowImageCell : UICollectionViewCell
+#import "M_CollectionCellModel.h"
+@interface V_ShowImagePreviewCell : UICollectionViewCell
 @property(nonatomic,strong)M_CollectionCellModel * model;
-
 @end

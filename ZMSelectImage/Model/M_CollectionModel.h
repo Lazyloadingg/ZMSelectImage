@@ -10,7 +10,7 @@
 #import <Photos/Photos.h>
 #import "ZMRequestPhoto.h"
 @interface M_CollectionModel : NSObject
-/*相册所有的图片**/
+/*相册所有的图片model**/
 @property(nonatomic,strong)NSArray * arr_image;
 /*相册名称**/
 @property(nonatomic,strong)NSString * str_collectionTitle;

@@ -22,7 +22,7 @@
 }
 -(void)setImgCount:(NSInteger)imgCount{
     _imgCount = imgCount;
-    self.lab_imageCount.text = [NSString stringWithFormat:@"%ld张",imgCount];
+    self.lab_imageCount.text = [NSString stringWithFormat:@"共有%ld张图片",imgCount];
 }
 #pragma mark >_<! --> 加载默认设置
 -(void)loadDefaultsSetting{
@@ -33,6 +33,7 @@
     
     UILabel * lab_imageCount = [[UILabel alloc]init];
     lab_imageCount.textAlignment = NSTextAlignmentCenter;
+    lab_imageCount.font = [UIFont systemFontOfSize:15];
     lab_imageCount.textColor = [[UIColor blackColor]colorWithAlphaComponent:0.6];
     lab_imageCount.backgroundColor = [UIColor whiteColor];
     

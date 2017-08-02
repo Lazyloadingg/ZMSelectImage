@@ -7,7 +7,6 @@
 //
 
 #import "VC_ShowImageList.h"
-#import "ZMSelectImage.h"
 #import "V_ShowImageListCell.h"
 #import "ZMRequestPhoto.h"
 @interface VC_ShowImageList ()
@@ -27,6 +26,10 @@ static NSString * const VC_ShowImageListCellID = @"VC_ShowImageListCellID";
     [self initSubViews];
 }
 #pragma mark >_<! 👉🏻 🐷Life cycle🐷
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self setBarButtonItemWith:nil title:@"返回" action:@selector(dismiss) Direction:Right];
+}
 #pragma mark >_<! 👉🏻 🐷System Delegate🐷
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -41,6 +44,7 @@ static NSString * const VC_ShowImageListCellID = @"VC_ShowImageListCellID";
     cell.model = model;
     
     return cell;
+
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     VC_ShowImage * vc = [[VC_ShowImage alloc]init];
@@ -50,24 +54,25 @@ static NSString * const VC_ShowImageListCellID = @"VC_ShowImageListCellID";
 }
 #pragma mark >_<! 👉🏻 🐷Custom Delegate🐷
 #pragma mark >_<! 👉🏻 🐷Event  Response🐷
+-(void)dismiss{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 #pragma mark >_<! 👉🏻 🐷Private Methods🐷
 #pragma mark >_<! 👉🏻 🐷Lazy loading🐷
 #pragma mark >_<! 👉🏻 🐷Init SubViews🐷
 -(void)setArr_imageLibrary:(NSArray *)arr_imageLibrary{
     _arr_imageLibrary  = arr_imageLibrary;
+
     [self.v_table reloadData];
 }
 -(void)initSubViews{
-    [self.view addSubview:self.v_table];
+    UITableView * v_table1 = [[UITableView alloc]initWithFrame:self.view.bounds style:UITableViewStylePlain];
+    v_table1.delegate = self;
+    v_table1.dataSource = self;
+    [self.view addSubview:v_table1];
+//    self.v_table = v_table1;
 }
--(UITableView *)v_table{
-    if (!_v_table) {
-        _v_table = [[UITableView alloc]initWithFrame:self.view.bounds];
-        _v_table.delegate = self;
-        _v_table.dataSource = self;
- 
-    }
-    return _v_table;
-}
+
 
 @end

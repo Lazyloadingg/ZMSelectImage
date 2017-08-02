@@ -1,15 +1,13 @@
 //
-//  ViewController.h
+//  ZMNavigationController.h
 //  ZMSelectImage
 //
-//  Created by Mac2 on 2017/7/12.
+//  Created by Mac2 on 2017/8/2.
 //  Copyright © 2017年 圣光大人. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 #import "ZMSelectImage.h"
-@interface VC_Main :ZMBaseViewController
-
+@interface ZMNavigationController : UINavigationController
 
 @end
-

@@ -8,11 +8,10 @@
 
 #import "VC_Main.h"
 #import <Photos/Photos.h>
-#import "ZMSelectImage.h"
 #import "VC_ShowImage.h"
 #import "VC_ShowImageList.h"
-#import "VC_ShowImageNavi.h"
 #import "ZMRequestPhoto.h"
+#import "ZMSelectImage.h"
 @interface VC_Main ()
 @property(nonatomic,strong)NSArray * arr_image;
 @property(nonatomic,strong)NSArray * arr_imageLibrary;
@@ -26,29 +25,43 @@
     [self GetAllImage];
     [self GetAllLibrary];
     
+    
+    UIButton * btn  =[[UIButton alloc ]init];
+    btn.frame = CGRectMake(100, 100, 100, 60);
+    btn.backgroundColor = [[UIColor greenColor]colorWithAlphaComponent:0.5];
+    [btn addTarget:self action:@selector(btnAction:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:btn];
+    
 }
--(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-//    VC_ShowImage * vc = [[VC_ShowImage alloc]init];
-//    vc.arr_image = self.arr_image;
-    VC_ShowImageList * vc = [[VC_ShowImageList alloc]init];
-    vc.arr_imageLibrary = self.arr_imageLibrary;
-    [self.navigationController pushViewController:vc animated:YES];
+-(void)btnAction:(UIButton *)btn{
+    VC_ShowImage * vc = [[VC_ShowImage alloc]init];
+    vc.arr_image = self.arr_image;
+    
+    VC_ShowImageList * vc_list = [[VC_ShowImageList alloc]init];
+    vc_list.arr_imageLibrary = self.arr_imageLibrary;
+    
+    ZMNavigationController * navi = [[ZMNavigationController alloc]init];
+    navi.viewControllers = @[vc_list,vc];
+    
+    [self presentViewController:navi animated:YES completion:nil];
+
+//    [self.navigationController pushViewController:vc_list animated:YES];
 }
+
 -(void)GetAllImage{
     
-    PHFetchResult * results = [PHAsset fetchAssetsWithMediaType:PHAssetMediaTypeImage options:nil];
-    PHImageRequestOptions * options = [[PHImageRequestOptions alloc]init];
-    options.resizeMode = PHImageRequestOptionsResizeModeExact;
-    options.deliveryMode = PHImageRequestOptionsDeliveryModeHighQualityFormat;
-    options.synchronous = YES;
-    NSMutableArray * arr_image = [NSMutableArray arrayWithCapacity:results.count];
-    for (NSInteger index = 0; index < results.count; index++) {
-        PHAsset * asset = results[index];
-        UIImage * image = [ZMRequestPhoto RequestImageithPHAsset:asset original:YES];
-        ZMLog(@"原图大小------%@",image);
-        [arr_image addObject:image];
-    }
-    self.arr_image = arr_image;
+//    PHFetchResult * results = [PHAsset fetchAssetsWithMediaType:PHAssetMediaTypeImage options:nil];
+//    PHImageRequestOptions * options = [[PHImageRequestOptions alloc]init];
+//    options.resizeMode = PHImageRequestOptionsResizeModeExact;
+//    options.deliveryMode = PHImageRequestOptionsDeliveryModeHighQualityFormat;
+//    options.synchronous = YES;
+//    NSMutableArray * arr_image = [NSMutableArray arrayWithCapacity:results.count];
+//    for (NSInteger index = 0; index < results.count; index++) {
+//        PHAsset * asset = results[index];
+//        M_CollectionCellModel * model = [M_CollectionCellModel initWithPHAsset:asset];
+//        [arr_image addObject:model];
+//    }
+//    self.arr_image = arr_image;
 }
 
 -(void)GetAllLibrary{
@@ -67,7 +80,9 @@
     for (NSInteger index = 0; index < smartAlbums.count; index++) {
         PHAssetCollection * collection = smartAlbums[index];
         M_CollectionModel * model = [M_CollectionModel initWithPHAssetCollection:collection];
-        [array addObject:model];
+        if (model) {
+            [array addObject:model];
+        }
     }
     
     PHFetchResult * userAlbums = [PHAssetCollection fetchAssetCollectionsWithType:PHAssetCollectionTypeAlbum subtype:PHAssetCollectionSubtypeAlbumRegular options:nil];
@@ -75,13 +90,22 @@
     
     for (NSInteger index = 0; index < userAlbums.count; index++) {
         PHAssetCollection * collection = userAlbums[index];
-        M_CollectionModel * model = [M_CollectionModel initWithPHAssetCollection:collection];
-        [array addObject:model];
         
+        M_CollectionModel * model = [M_CollectionModel initWithPHAssetCollection:collection];
+        if (model) {
+                        [array addObject:model];
+        }
     }
+    
+    NSMutableArray * arr_image = [NSMutableArray array];
     self.arr_imageLibrary = array;
-     
+    for (NSInteger index = 0; index < self.arr_imageLibrary.count; index++) {
+        M_CollectionModel * model = self.arr_imageLibrary[index];
+        [arr_image addObjectsFromArray:model.arr_image];
+    }
+        self.arr_image = arr_image;
 }
+
 -(void)convertMovWithSourceURL:(NSURL *)sourceUrl fileName:(NSString *)fileName saveExportFilePath:(NSString *)path{
     if (![[NSFileManager defaultManager] fileExistsAtPath:path]) {
         [[NSFileManager defaultManager] createDirectoryAtPath:path withIntermediateDirectories:YES attributes:nil error:nil];
