@@ -53,4 +53,11 @@
 -(CGFloat)centerY{
     return self.center.y;
 }
+
+-(CGFloat)left{
+    return self.frame.origin.x;
+}
+-(CGFloat)right{
+    return self.frame.origin.x + self.frame.size.width;
+}
 @end

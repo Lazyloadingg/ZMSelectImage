@@ -28,6 +28,7 @@
 		0AA598C21F31D9A0005563CA /* VC_ShowImagePreview.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AA598C11F31D9A0005563CA /* VC_ShowImagePreview.m */; };
 		0AA598C51F31D9E7005563CA /* V_ShowImagePreviewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AA598C41F31D9E7005563CA /* V_ShowImagePreviewCell.m */; };
 		961994371F31336E00F5027F /* ZMBaseButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 961994361F31336E00F5027F /* ZMBaseButton.m */; };
+		9662B7801F320C3000D8F7B9 /* V_PreviewToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 9662B77F1F320C3000D8F7B9 /* V_PreviewToolbar.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +73,8 @@
 		0AA598C41F31D9E7005563CA /* V_ShowImagePreviewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = V_ShowImagePreviewCell.m; sourceTree = "<group>"; };
 		961994351F31336E00F5027F /* ZMBaseButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMBaseButton.h; sourceTree = "<group>"; };
 		961994361F31336E00F5027F /* ZMBaseButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMBaseButton.m; sourceTree = "<group>"; };
+		9662B77E1F320C3000D8F7B9 /* V_PreviewToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = V_PreviewToolbar.h; sourceTree = "<group>"; };
+		9662B77F1F320C3000D8F7B9 /* V_PreviewToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = V_PreviewToolbar.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +139,8 @@
 				0A7DD55E1F3068A900F1771F /* V_ShowImageFooter.m */,
 				0A7DD55F1F3068A900F1771F /* V_ShowImageListCell.h */,
 				0A7DD5601F3068A900F1771F /* V_ShowImageListCell.m */,
+				9662B77E1F320C3000D8F7B9 /* V_PreviewToolbar.h */,
+				9662B77F1F320C3000D8F7B9 /* V_PreviewToolbar.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -284,6 +289,7 @@
 				0AA598B91F31AD12005563CA /* M_CollectionCellModel.m in Sources */,
 				0A822B141F162E7500B0DB26 /* AppDelegate.m in Sources */,
 				0A7DD5661F3068A900F1771F /* V_ShowImageFooter.m in Sources */,
+				9662B7801F320C3000D8F7B9 /* V_PreviewToolbar.m in Sources */,
 				0A7DD56B1F306A1600F1771F /* UIView+FrameExtension.m in Sources */,
 				0A822B111F162E7500B0DB26 /* main.m in Sources */,
 			);

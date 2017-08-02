@@ -35,6 +35,7 @@
             weakself.v_image.image = image;
         }];
 });
+
 }
 #pragma mark >_<! --> 加载默认设置
 -(void)loadDefaultsSetting{
@@ -51,5 +52,6 @@
 -(void)layoutSubviews{
     [super layoutSubviews];
     self.v_image.frame = self.bounds;
+    ZMLog(@"---------%f",self.left);
 }
 @end
