@@ -17,12 +17,10 @@
     
     CGFloat scale = asset.pixelHeight * 1.0 / asset.pixelWidth;
     
-    
-    
-    CGSize size = CGSizeMake(100, 100);
+    CGSize size = CGSizeMake(120, 120);
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
     [ZMRequestPhoto RequestImageithPHAsset:asset imageSize:size block:^(UIImage * image) {
-        model.img_preview = image;
+              model.img_preview = image;
     }];
         });
     return model;

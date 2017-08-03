@@ -25,12 +25,18 @@
 -(void)selectAction:(UIButton *)btn{
     btn.selected = !btn.selected;
     ZMLog(@"选择");
+    if (self.delegate && [self.delegate respondsToSelector:@selector(originalImageAction:)]) {
+        [self.delegate originalImageAction:btn];
+    }
 }
 -(void)sendAction:(UIButton *)btn{
     ZMLog(@"确定发送");
+    if (self.delegate && [self.delegate respondsToSelector:@selector(sendAction:)]) {
+        [self.delegate sendAction:btn];
+    }
 }
 -(void)loadDefaultsSetting{
-    self.backgroundColor = [[UIColor blackColor]colorWithAlphaComponent:0.3];
+    self.backgroundColor = [[UIColor blackColor]colorWithAlphaComponent:0.5];
 }
 -(void)initSubViews{
     
@@ -51,6 +57,9 @@
     self.btn_send = btn_send;
     
     UILabel * lab_imageSize = [[UILabel alloc]init];
+    lab_imageSize.font = [UIFont systemFontOfSize:12];
+    lab_imageSize.textColor = [[UIColor whiteColor]colorWithAlphaComponent:0.6];
+    lab_imageSize.text = @"原图";
     [self addSubview:lab_imageSize];
     self.lab_imageSize = lab_imageSize;
 }
@@ -58,11 +67,12 @@
     [super layoutSubviews];
     
     self.btn_select.frame = CGRectMake(10, (self.height - 30)/2,30,30);
-
     
-    self.lab_imageSize.frame = CGRectMake(self.btn_select.x+self.btn_select.width +5, self.btn_select.y, 40, 10);
+    self.lab_imageSize.bounds = CGRectMake(0, 0, 40, 10);
+    self.lab_imageSize.centerX = self.btn_select.right + 25;
+    self.lab_imageSize.centerY = self.btn_select.centerY;
     
-    self.btn_send.frame =CGRectMake(self.right - 60, (self.height - 30)/2,50,30);
+    self.btn_send.frame =CGRectMake(self.right - 70, (self.height - 30)/2,60,30);
     self.btn_send.layer.cornerRadius = 5;
     self.btn_send.layer.masksToBounds = YES;
     

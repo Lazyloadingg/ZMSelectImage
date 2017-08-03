@@ -17,7 +17,7 @@
 
 #import "UIView+FrameExtension.h"
 #import "UIViewController+Extension.h"
-
+#import "PHAsset+RequestImage.h"
 #import "VC_ShowImage.h"
 #import "M_CollectionModel.h"
 #import "M_CollectionCellModel.h"

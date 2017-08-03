@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@protocol V_PreviewToolbarDelegate <NSObject>
+-(void)sendAction:(UIButton *)btn;
+-(void)originalImageAction:(UIButton *)btn;
+@end
 @interface V_PreviewToolbar : UIView
-
+@property(nonatomic,weak)id<V_PreviewToolbarDelegate>  delegate ;
 @end

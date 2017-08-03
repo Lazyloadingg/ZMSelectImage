@@ -11,6 +11,8 @@
 		0A128F341F31744100EBF1D2 /* ZMNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A128F321F31744100EBF1D2 /* ZMNavigationController.m */; };
 		0A128F371F31748900EBF1D2 /* M_CollectionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A128F361F31748900EBF1D2 /* M_CollectionModel.m */; };
 		0A128F3A1F31765D00EBF1D2 /* UIViewController+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A128F391F31765D00EBF1D2 /* UIViewController+Extension.m */; };
+		0A2192B61F32CB3C0012EBDB /* PHAsset+RequestImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A2192B51F32CB3C0012EBDB /* PHAsset+RequestImage.m */; };
+		0A2192B91F32D7D60012EBDB /* V_PreviewNaviBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A2192B81F32D7D60012EBDB /* V_PreviewNaviBar.m */; };
 		0A7DD5611F3068A900F1771F /* VC_Main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A7DD5501F3068A900F1771F /* VC_Main.m */; };
 		0A7DD5621F3068A900F1771F /* VC_ShowImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A7DD5521F3068A900F1771F /* VC_ShowImage.m */; };
 		0A7DD5631F3068A900F1771F /* VC_ShowImageList.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A7DD5541F3068A900F1771F /* VC_ShowImageList.m */; };
@@ -40,6 +42,10 @@
 		0A128F361F31748900EBF1D2 /* M_CollectionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M_CollectionModel.m; sourceTree = "<group>"; };
 		0A128F381F31765D00EBF1D2 /* UIViewController+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Extension.h"; sourceTree = "<group>"; };
 		0A128F391F31765D00EBF1D2 /* UIViewController+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Extension.m"; sourceTree = "<group>"; };
+		0A2192B41F32CB3C0012EBDB /* PHAsset+RequestImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PHAsset+RequestImage.h"; sourceTree = "<group>"; };
+		0A2192B51F32CB3C0012EBDB /* PHAsset+RequestImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PHAsset+RequestImage.m"; sourceTree = "<group>"; };
+		0A2192B71F32D7D60012EBDB /* V_PreviewNaviBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = V_PreviewNaviBar.h; sourceTree = "<group>"; };
+		0A2192B81F32D7D60012EBDB /* V_PreviewNaviBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = V_PreviewNaviBar.m; sourceTree = "<group>"; };
 		0A7DD54F1F3068A900F1771F /* VC_Main.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VC_Main.h; sourceTree = "<group>"; };
 		0A7DD5501F3068A900F1771F /* VC_Main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VC_Main.m; sourceTree = "<group>"; };
 		0A7DD5511F3068A900F1771F /* VC_ShowImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VC_ShowImage.h; sourceTree = "<group>"; };
@@ -124,6 +130,8 @@
 				0A7DD56D1F30782100F1771F /* ZMRequestPhoto.m */,
 				0A128F381F31765D00EBF1D2 /* UIViewController+Extension.h */,
 				0A128F391F31765D00EBF1D2 /* UIViewController+Extension.m */,
+				0A2192B41F32CB3C0012EBDB /* PHAsset+RequestImage.h */,
+				0A2192B51F32CB3C0012EBDB /* PHAsset+RequestImage.m */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -141,6 +149,8 @@
 				0A7DD5601F3068A900F1771F /* V_ShowImageListCell.m */,
 				9662B77E1F320C3000D8F7B9 /* V_PreviewToolbar.h */,
 				9662B77F1F320C3000D8F7B9 /* V_PreviewToolbar.m */,
+				0A2192B71F32D7D60012EBDB /* V_PreviewNaviBar.h */,
+				0A2192B81F32D7D60012EBDB /* V_PreviewNaviBar.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -281,7 +291,9 @@
 				0A7DD5651F3068A900F1771F /* V_ShowImageCell.m in Sources */,
 				0A7DD5611F3068A900F1771F /* VC_Main.m in Sources */,
 				961994371F31336E00F5027F /* ZMBaseButton.m in Sources */,
+				0A2192B61F32CB3C0012EBDB /* PHAsset+RequestImage.m in Sources */,
 				0A7DD5621F3068A900F1771F /* VC_ShowImage.m in Sources */,
+				0A2192B91F32D7D60012EBDB /* V_PreviewNaviBar.m in Sources */,
 				0A7DD56E1F30782100F1771F /* ZMRequestPhoto.m in Sources */,
 				0A128F341F31744100EBF1D2 /* ZMNavigationController.m in Sources */,
 				0AA598C21F31D9A0005563CA /* VC_ShowImagePreview.m in Sources */,

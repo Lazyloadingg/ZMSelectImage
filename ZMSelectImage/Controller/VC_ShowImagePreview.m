@@ -10,15 +10,18 @@
 #import "ZMSelectImage.h"
 #import "V_ShowImagePreviewCell.h"
 #import "V_PreviewToolbar.h"
+#import "V_PreviewNaviBar.h"
 @interface VC_ShowImagePreview ()
 <
 UICollectionViewDelegate,
-UICollectionViewDataSource
+UICollectionViewDataSource,
+V_PreviewNaviBarDelegate,
+V_PreviewToolbarDelegate
 >
-
 
 @property(nonatomic,strong)UICollectionView * v_collection;
 @property(nonatomic,strong)V_PreviewToolbar * toolbar;
+@property(nonatomic,strong)V_PreviewNaviBar * navibar;
 @property(nonatomic,assign)BOOL  isHidden;
 @end
 
@@ -34,13 +37,13 @@ static NSString * const VC_ShowImagePreviewCellID = @"VC_ShowImagePreviewCellID"
 #pragma mark >_<! 👉🏻 🐷Life cycle🐷
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-//    self.navigationController.navigationBar.hidden = YES;
+    self.navigationController.navigationBar.hidden = YES;
     
     [self.v_collection scrollToItemAtIndexPath:self.idx_current atScrollPosition:UICollectionViewScrollPositionTop animated:NO];
 }
 -(void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
-    self.navigationController.navigationBar.hidden = YES;
+    self.navigationController.navigationBar.hidden = NO;
 }
 #pragma mark >_<! 👉🏻 🐷System Delegate🐷
 
@@ -61,18 +64,29 @@ static NSString * const VC_ShowImagePreviewCellID = @"VC_ShowImagePreviewCellID"
     [self toolbarHidden];
 }
 #pragma mark >_<! 👉🏻 🐷Custom Delegate🐷
+-(void)backAction:(UIButton *)btn{
+    [self.navigationController popViewControllerAnimated:YES];
+}
+-(void)didSelectedAction:(UIButton *)btn{
+    ZMLog(@"选中当前图片");
+}
+-(void)sendAction:(UIButton *)btn{
+    ZMLog(@"发送");
+}
+-(void)originalImageAction:(UIButton *)btn{
+    ZMLog(@"需要原图");
+}
 #pragma mark >_<! 👉🏻 🐷Event  Response🐷
 #pragma mark >_<! 👉🏻 🐷Private Methods🐷
 -(void)toolbarHidden{
     self.isHidden = !self.isHidden;;
     if (self.isHidden == YES) {
         self.toolbar.hidden = YES;
-        self.navigationController.navigationBar.hidden = YES;
+        self.navibar.hidden = YES;
     }else{
         self.toolbar.hidden = NO;
-        self.navigationController.navigationBar.hidden = NO;
+        self.navibar.hidden = NO;
     }
-
 }
 #pragma mark >_<! 👉🏻 🐷Lazy loading🐷
 #pragma mark >_<! 👉🏻 🐷Init SubViews🐷
@@ -83,29 +97,36 @@ static NSString * const VC_ShowImagePreviewCellID = @"VC_ShowImagePreviewCellID"
 
 -(void)loadDefaultsSetting{
     self.view.backgroundColor = [UIColor whiteColor];
+    self.automaticallyAdjustsScrollViewInsets = NO;
     self.isHidden = NO;
 }
 -(void)InitSubViews{
     UICollectionViewFlowLayout * layout  = [[UICollectionViewFlowLayout alloc]init];
     layout.itemSize = CGSizeMake(MainScreen_Width,MainScreen_Height);
-    layout.footerReferenceSize = CGSizeMake(MainScreen_Width, 60);
     layout.minimumLineSpacing = 0;
     layout.minimumInteritemSpacing = 0;
     layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;;
     
     UICollectionView * v_collection = [[UICollectionView alloc]initWithFrame:self.view.bounds collectionViewLayout:layout];
     [ v_collection registerClass:[V_ShowImagePreviewCell class] forCellWithReuseIdentifier:VC_ShowImagePreviewCellID];
-
     v_collection.delegate = self;
     v_collection.dataSource = self;
     v_collection.pagingEnabled = YES;
     v_collection.backgroundColor = [UIColor blackColor];
+    v_collection.showsHorizontalScrollIndicator = NO;
     self.v_collection = v_collection;
     [self.view addSubview:v_collection];
     
     V_PreviewToolbar * toolbar = [[V_PreviewToolbar alloc]initWithFrame:CGRectMake(0, MainScreen_Height-50, MainScreen_Width, 50)];
+    toolbar.delegate = self;
     [self.view addSubview:toolbar];
     self.toolbar = toolbar;
+    
+    V_PreviewNaviBar * navibar = [[V_PreviewNaviBar alloc]initWithFrame:CGRectMake(0, 0, MainScreen_Width, 60)];
+    navibar.delegate = self;
+    [self.view addSubview:navibar];
+    self.navibar = navibar;
+    
 }
 
 -(BOOL)prefersStatusBarHidden{
